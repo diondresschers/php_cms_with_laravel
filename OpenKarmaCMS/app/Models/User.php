@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    # DD: This has a User to Pages relation:
+    public function pages() {
+        return $this->hadMany('App\Page');
+    }
+
 }
